@@ -1,0 +1,35 @@
+.calculator {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  #result {
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: right;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+  }
+  
+  button {
+    height: 40px;
+    font-size: 16px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .equals {
+    background-color: rgb(52, 124, 233);
+  }
