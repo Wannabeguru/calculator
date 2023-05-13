@@ -9,15 +9,24 @@ function getData() {
     return inputValue;
 }
 
-function parseData() {
-    toParse = getData().split(/(\+|\-|\*|\/)/);
-    console.log(toParse);
-
-}
-
-//function operate() {
-   
     
-//}
+
+function operate() {
+    input = getData();
+    const substrings = input.split((/(\+|\-|\*|\/)/));
+
+    const numbers = [];
+    const operators = [];
+
+    substrings.forEach(substring => {
+        if (!NaN(substring)) {
+            const number = parseFloat(substring);
+            numbers.push(number);
+        } else if (['+', '-', '*', '/'].includes(substring)) {
+            operators.push(substring);
+        }
+    });
+}
+    
 
 
