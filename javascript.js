@@ -4,29 +4,48 @@ function appendToResult(text) {
 }
 
 function getData() {
-    result = document.getElementById('result');
-    inputValue = result.value;
+    const result = document.getElementById('result');
+    const inputValue = result.value;
     return inputValue;
 }
 
     
 
-function operate() {
-    input = getData();
+function calculate() {
+    const input = getData();
     const substrings = input.split((/(\+|\-|\*|\/)/));
 
     const numbers = [];
     const operators = [];
 
     substrings.forEach(substring => {
-        if (!NaN(substring)) {
+        if (!isNaN(substring)) {
             const number = parseFloat(substring);
             numbers.push(number);
         } else if (['+', '-', '*', '/'].includes(substring)) {
             operators.push(substring);
         }
     });
+    //preform calculations based on extracted numbers and operators
+    let result = numbers[0];
+    for (let i = 1; i < numbers.length; i++){
+        const operator = operators[i - 1];
+        if (operator === '+'){
+            result += numbers[i];
+        } else if (operator === '-'){
+            result -= numbers[i];
+        } else if (operator === '*'){
+            result *= numbers[i];
+        } else if (operator === '/') {
+            result /= numbers[i];
+        }
+    }
+    return result; //returns the calculated result
 }
+
+
+
+
     
 
 
