@@ -11,7 +11,7 @@ function getData() {
 
     
 
-function calculate() {
+function operate() {
     const input = getData();
     const substrings = input.split((/(\+|\-|\*|\/)/));
 
@@ -41,6 +41,18 @@ function calculate() {
         }
     }
     return result; //returns the calculated result
+}
+
+function calculate (){
+    const result = operate();
+    const resultElement = document.getElementById('result');
+    resultElement.value = result;
+}
+
+
+function clearResult() {
+    const resultElement = document.getElementById('result');
+    resultElement.value = '';
 }
 
 
